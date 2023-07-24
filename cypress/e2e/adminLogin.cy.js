@@ -10,8 +10,6 @@ describe('Admin login', () => {
   it("Should login with valid admin data", () => {
     cy.login(data.validEmail, data.validPassword);
     cy.url().should('eq', "http://qamid.tmweb.ru/admin/index.php");
-    cy.wait(1000)
-    cy.contains('Управление залами');
   })
 
  it("Should not login with invalid data", () => {

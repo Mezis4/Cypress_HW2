@@ -4,10 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test:login": "cypress run --record --key f40548e2-7d18-47ea-b7b4-a6ce4c4594d6 --group login --spec \"cypress/e2e/adminLogin.cy.js\", --ci-build-id 1",
-    "test:site": "cypress run --record --key f40548e2-7d18-47ea-b7b4-a6ce4c4594d6 --group site --spec \"cypress/e2e/cinemaSite.cy.js\", --ci-build-id 1",
-    "test:reservation": "cypress run --record --key f40548e2-7d18-47ea-b7b4-a6ce4c4594d6 --group reservation --spec \"cypress/e2e/reservationSeat.cy.js\", --ci-build-id 1",
-    "test:parallel": "run-p -c test:site & test:login & test:reservation"
+    "test:login": "cypress run --record --key f40548e2-7d18-47ea-b7b4-a6ce4c4594d6 --group login --spec \"cypress/e2e/adminLogin.cy.js\" --ci-build-id 3",
+    "test:site": "cypress run --record --key f40548e2-7d18-47ea-b7b4-a6ce4c4594d6 --group site --spec \"cypress/e2e/cinemaSite.cy.js\" --ci-build-id 3",
+    "test:reservation": "cypress run --record --key f40548e2-7d18-47ea-b7b4-a6ce4c4594d6 --group reservation --spec \"cypress/e2e/reservationSeat.cy.js\" --ci-build-id 3",
+    "test:parallel": "run-p -c test:site test:login test:reservation"
   },
   "author": "",
   "license": "ISC",
