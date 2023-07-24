@@ -10,6 +10,7 @@ describe('Admin login', () => {
   it("Should login with valid admin data", () => {
     cy.login(data.validEmail, data.validPassword);
     cy.url().should('eq', "http://qamid.tmweb.ru/admin/index.php");
+    cy.wait(1000)
     cy.contains('Управление залами');
   })
 
@@ -31,7 +32,7 @@ describe('Admin login', () => {
     cy.contains('Ошибка авторизации');
   })
 
-  it("Should not login with empty fieldы", () => {
+  it("Should not login with empty field", () => {
     cy.login(" ", " ");
     cy.url().should('not.eq', 'http://qamid.tmweb.ru/admin/index.php');
     cy.get(elements.passwordField).should('not.have.value');

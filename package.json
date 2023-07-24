@@ -4,12 +4,16 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test:login": "cypress run --record --group login --spec \"cypress/e2e/adminLogin.cy.js\", --ci-build-id 1",
+    "test:site": "cypress run --record --group site --spec \"cypress/e2e/cinemaSite.cy.js\", --ci-build-id 1",
+    "test:reservation": "cypress run --record --group reservation --spec \"cypress/e2e/reservationSeat.cy.js\", --ci-build-id 1",
+    "test:parallel": "run-p -c test:site & test:login & test:reservation"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "cypress": "^12.17.1",
-    "cypress-file-upload": "^5.0.8"
+    "cypress-file-upload": "^5.0.8",
+    "npm-run-all": "^4.1.5"
   }
 }

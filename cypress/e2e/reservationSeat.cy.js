@@ -10,7 +10,7 @@ describe('template spec', () => {
   
   it('reservationSeatsAdminCreatedMovie', () => {
     cy.login(data.validEmail, data.validPassword);
-    
+    cy.wait(1000)
     cy.get(page.hallName)
       .invoke("text")
       .then((text) => {
